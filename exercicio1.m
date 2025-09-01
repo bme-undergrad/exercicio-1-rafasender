@@ -1,14 +1,14 @@
 function t = exercicio1(func, x0)
 
 % nao alterar: inicio
-es = 1;      % Criterio de parada em porcentagem (erro relativo < 1%)
+es = 0.01;      % Criterio de parada em porcentagem (erro relativo < 1%)
 imax = 20;   % Numero maximo de iteracoes
 % nao alterar: fim
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Metodo: Secante Modificada
 % Descricao: Este codigo calcula a raiz de 'func' usando o metodo da
-% secante modificada, com um chute inicial 'x0'.
+%secante modificada, com um chute inicial 'x0'.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Inicializacao das variaveis do metodo
@@ -25,16 +25,16 @@ while (ea >= es && iter < imax)
     % Numerador e denominador da formula da Secante Modificada
     fx = func(xr);
     fx_plus_delta = func(xr + delta * xr);
-    denominator = fx_plus_delta - fx;
+    denominador = fx_plus_delta - fx;
 
     % Verificacao para evitar divisao por zero, que pode ocorrer se a
     % funcao for muito plana na regiao.
-    if abs(denominator) < 1e-15
+    if abs(denominador) < 1e-15
         error('A derivada aproximada e muito proxima de zero. O metodo falhou.');
     endif
 
     % Calcula a proxima estimativa da raiz
-    xr = xr - (fx * delta * xr) / denominator;
+    xr = xr - (fx * delta * xr) / denominador;
 
     % Incrementa o contador de iteracoes
     iter = iter + 1;
