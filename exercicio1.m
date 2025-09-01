@@ -1,3 +1,4 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 function t = exercicio1(func, x0)
 
 % nao alterar: inicio
@@ -56,3 +57,4 @@ t = xr;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 endfunction
+
