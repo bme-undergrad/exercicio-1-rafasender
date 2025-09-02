@@ -31,7 +31,7 @@ while (ea >= es && iter < imax)
     % funcao for muito plana na regiao.
     if abs(denominator) < 1e-15
         error('A derivada aproximada e muito proxima de zero. O metodo falhou.');
-    endif
+    end
 
     % Calcula a proxima estimativa da raiz
     xr = xr - (fx * delta * xr) / denominator;
@@ -43,13 +43,13 @@ while (ea >= es && iter < imax)
     % Evita divisao por zero se a nova estimativa 'xr' for 0
     if xr ~= 0
       ea = abs((xr - xrold) / xr) * 100;
-    endif
-endwhile
+    end
+end
 
 % Se o loop terminou por excesso de iteracoes, exibe um aviso.
 if ea >= es
   warning('O metodo nao convergiu em %d iteracoes. Erro final: %.2f%%', imax, ea);
-endif
+end
 
 % Atribui o resultado final (a raiz encontrada) a variavel de saida 't'
 t = xr;
