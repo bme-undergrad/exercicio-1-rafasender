@@ -1,4 +1,4 @@
-function t = exercicio1(func, x0)
+function t = exercicio1(func, x0, funcd)
 
 % nao alterar: inicio
 es = 1;      % Criterio de parada em porcentagem (erro relativo < 1%)
